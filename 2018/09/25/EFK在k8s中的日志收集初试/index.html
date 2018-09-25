@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="efk k8s," />
+  <meta name="keywords" content="efk,k8s," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. elasticsearch和kibana的配置不在阐述2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方123456789101112131415#fluentd-daemonset-elasticsearch-rbac.yaml  volumeMounts:  - name: varlog    mountPath: /var/log  - name: v">
-<meta name="keywords" content="efk k8s">
+<meta name="description" content="1. Elasticsearch和kibana的配置不在阐述2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方123456789101112131415#fluentd-daemonset-elasticsearch-rbac.yaml  volumeMounts:  - name: varlog    mountPath: /var/log  - name: v">
+<meta name="keywords" content="efk,k8s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EFK在k8s中的日志收集初试">
 <meta property="og:url" content="http://yoursite.com/2018/09/25/EFK在k8s中的日志收集初试/index.html">
 <meta property="og:site_name" content="FENG">
-<meta property="og:description" content="1. elasticsearch和kibana的配置不在阐述2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方123456789101112131415#fluentd-daemonset-elasticsearch-rbac.yaml  volumeMounts:  - name: varlog    mountPath: /var/log  - name: v">
+<meta property="og:description" content="1. Elasticsearch和kibana的配置不在阐述2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方123456789101112131415#fluentd-daemonset-elasticsearch-rbac.yaml  volumeMounts:  - name: varlog    mountPath: /var/log  - name: v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-25T05:47:03.321Z">
+<meta property="og:updated_time" content="2018-09-25T05:48:44.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EFK在k8s中的日志收集初试">
-<meta name="twitter:description" content="1. elasticsearch和kibana的配置不在阐述2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方123456789101112131415#fluentd-daemonset-elasticsearch-rbac.yaml  volumeMounts:  - name: varlog    mountPath: /var/log  - name: v">
+<meta name="twitter:description" content="1. Elasticsearch和kibana的配置不在阐述2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方123456789101112131415#fluentd-daemonset-elasticsearch-rbac.yaml  volumeMounts:  - name: varlog    mountPath: /var/log  - name: v">
 
 
 
@@ -320,7 +320,7 @@
       
 
       
-        <h4 id="1-elasticsearch和kibana的配置不在阐述"><a href="#1-elasticsearch和kibana的配置不在阐述" class="headerlink" title="1. elasticsearch和kibana的配置不在阐述"></a>1. elasticsearch和kibana的配置不在阐述</h4><h4 id="2-在k8s中部署fluentd-官方文档，但是在使用过程当中有需要修改的几处地方"><a href="#2-在k8s中部署fluentd-官方文档，但是在使用过程当中有需要修改的几处地方" class="headerlink" title="2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方"></a>2. 在k8s中部署fluentd <a href="https://docs.fluentd.org/v0.12/articles/kubernetes-fluentd" target="_blank" rel="noopener">官方文档</a>，但是在使用过程当中有需要修改的几处地方</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#fluentd-daemonset-elasticsearch-rbac.yaml</span></span><br><span class="line"><span class="attr">  volumeMounts:</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">varlog</span></span><br><span class="line"><span class="attr">    mountPath:</span> <span class="string">/var/log</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">varlibdockercontainers</span></span><br><span class="line"><span class="attr">    mountPath:</span> <span class="string">/data/docker/containers</span></span><br><span class="line"><span class="attr">    readOnly:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">terminationGracePeriodSeconds:</span> <span class="number">30</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="attr">- name:</span> <span class="string">varlog</span></span><br><span class="line"><span class="attr">  hostPath:</span></span><br><span class="line"><span class="attr">    path:</span> <span class="string">/var/log</span></span><br><span class="line"><span class="attr">- name:</span> <span class="string">varlibdockercontainers</span></span><br><span class="line"><span class="attr">  hostPath:</span></span><br><span class="line"><span class="attr">    path:</span> <span class="string">/data/docker/containers</span></span><br></pre></td></tr></table></figure>
+        <h4 id="1-Elasticsearch和kibana的配置不在阐述"><a href="#1-Elasticsearch和kibana的配置不在阐述" class="headerlink" title="1. Elasticsearch和kibana的配置不在阐述"></a>1. Elasticsearch和kibana的配置不在阐述</h4><h4 id="2-在k8s中部署fluentd-官方文档，但是在使用过程当中有需要修改的几处地方"><a href="#2-在k8s中部署fluentd-官方文档，但是在使用过程当中有需要修改的几处地方" class="headerlink" title="2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方"></a>2. 在k8s中部署fluentd <a href="https://docs.fluentd.org/v0.12/articles/kubernetes-fluentd" target="_blank" rel="noopener">官方文档</a>，但是在使用过程当中有需要修改的几处地方</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#fluentd-daemonset-elasticsearch-rbac.yaml</span></span><br><span class="line"><span class="attr">  volumeMounts:</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">varlog</span></span><br><span class="line"><span class="attr">    mountPath:</span> <span class="string">/var/log</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">varlibdockercontainers</span></span><br><span class="line"><span class="attr">    mountPath:</span> <span class="string">/data/docker/containers</span></span><br><span class="line"><span class="attr">    readOnly:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">terminationGracePeriodSeconds:</span> <span class="number">30</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="attr">- name:</span> <span class="string">varlog</span></span><br><span class="line"><span class="attr">  hostPath:</span></span><br><span class="line"><span class="attr">    path:</span> <span class="string">/var/log</span></span><br><span class="line"><span class="attr">- name:</span> <span class="string">varlibdockercontainers</span></span><br><span class="line"><span class="attr">  hostPath:</span></span><br><span class="line"><span class="attr">    path:</span> <span class="string">/data/docker/containers</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -338,7 +338,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/efk-k8s/" rel="tag"># efk k8s</a>
+            <a href="/tags/efk-k8s/" rel="tag"># efk,k8s</a>
           
         </div>
       
@@ -449,7 +449,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -482,7 +482,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-elasticsearch和kibana的配置不在阐述"><span class="nav-number">1.</span> <span class="nav-text">1. elasticsearch和kibana的配置不在阐述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在k8s中部署fluentd-官方文档，但是在使用过程当中有需要修改的几处地方"><span class="nav-number">2.</span> <span class="nav-text">2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Elasticsearch和kibana的配置不在阐述"><span class="nav-number">1.</span> <span class="nav-text">1. Elasticsearch和kibana的配置不在阐述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在k8s中部署fluentd-官方文档，但是在使用过程当中有需要修改的几处地方"><span class="nav-number">2.</span> <span class="nav-text">2. 在k8s中部署fluentd 官方文档，但是在使用过程当中有需要修改的几处地方</span></a></li></ol></div>
             
 
           </div>
